@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: "Boodschappen doen"
+  description: "Koop melk, eieren en brood"
+  status: "open"
+
+two:
+  title: "Workout"
+  description: "30 minuten cardio en krachttraining"
+  status: "completed"
