@@ -5,3 +5,11 @@ class TasksController < ApplicationController
     @completed_tasks = Task.completed.order(created_at: :desc)
   end
 end
+  private
+  def set_task
+    @task = Task.find(params[:id])
+  end
+  def task_params
+    params.require(:task).permit(:title, :description, :status)
+  end
+end
