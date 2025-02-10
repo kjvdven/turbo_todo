@@ -3,7 +3,6 @@ class CreateTasks < ActiveRecord::Migration[8.0]
     create_table :tasks do |t|
       t.string :title, null: false
       t.text :description
-      t.string :status, default: "open", null: false
 
       t.timestamps
     end
