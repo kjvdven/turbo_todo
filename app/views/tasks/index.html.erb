@@ -12,7 +12,7 @@
     <div  class="space-y-4">
       <h2 class="font-serif text-xl font-bold text-gray-700">Open Tasks</h2>
       <%= turbo_stream_from "tasks" %>
-      <%= turbo_frame_tag "tasks" do %>
+      <%= turbo_frame_tag "in_progress_tasks" do %>
         <%= render @tasks %>
       <% end %>
     </div>
