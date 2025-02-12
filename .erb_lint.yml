@@ -1,0 +1,13 @@
+---
+EnableDefaultLinters: true
+linters:
+  ErbSafety:
+    enabled: true
+  Rubocop:
+    enabled: true
+    rubocop_config:
+      inherit_from:
+        - .rubocop.ym
+      Style/StringLiterals:
+        Enabled: true
+        EnforcedStyle: double_quotesl
