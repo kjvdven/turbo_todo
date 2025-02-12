@@ -1,7 +1,17 @@
 <div class="space-y-1 group" id="<%= dom_id task %>">
   <div class="text-xs inline-flex rounded-full py-1 px-2 font-semibold text-gray-800/80 <%= task.status == 'completed' ? 'bg-green-200' : 'bg-gray-200' %>"><%= task.status %></div>
-  <div class="group-hover:opacity-100 <%= "opacity-50" if task.completed?  %>">
-    <h3 class="text-lg font-bold"><%= task.title %></h3>
-    <p class="text-gray-500"><%= task.description %></p>
-  </div>
+  <%= turbo_frame_tag dom_id(task, "edit") do %>
+    <div class="group-hover:opacity-100 <%= "opacity-50" if task.completed?  %>">
+      <%= link_to task_path(task), data: { turbo_frame: "_top" } do %>
+        <h3 class="text-lg font-bold">
+          <%= task.title %>
+        </h3>
+      <% end %>
+      <p class="text-gray-500"><%= task.description %></p>
+      <div>
+        <%= link_to "Edit task", edit_task_path(task), class: "btn btn--primary" %>
+        <%= button_to "Delete task", task_path(task), method: :delete, class: "btn btn--danger" %>
+      </div>
+    </div>
+  <% end %>
 </div>

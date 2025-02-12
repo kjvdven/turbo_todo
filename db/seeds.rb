@@ -10,17 +10,13 @@
 
 puts "📝 Seeding tasks..."
 
-Task.destroy_all # Optioneel: Verwijder bestaande taken om dubbele records te voorkomen
+# Optional: destroy all tasks to start with a clean database
+Task.destroy_all
 
-tasks = [
-  { title: "Boodschappen doen", description: "Koop melk, eieren en brood", status: "open" },
-  { title: "Workout", description: "30 minuten cardio en krachttraining", status: "open" },
-  { title: "Boek lezen", description: "Lees 20 pagina's van je huidige boek", status: "completed" },
-  { title: "Project starten", description: "Begin met de eerste feature van je Rails-project", status: "open" }
-]
-
-tasks.each do |task|
-  Task.create!(task)
-end
+# Fill the database with data from the fixtures
+system("bin/rails db:fixtures:load FIXTURES=tasks")
 
 puts "✅ Seeding completed! #{Task.count} tasks created."
+
+# Load all fixtures
+# system("bin/rails db:fixtures:load")

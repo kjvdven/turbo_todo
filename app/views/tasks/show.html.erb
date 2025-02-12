@@ -1,0 +1,14 @@
+<%# app/views/tasks/show.html.erb %>
+<main class="container">
+  <%= link_to sanitize("&larr; Back to tasks"), tasks_path %>
+  <div class="header">
+    <h1>
+      <%= @task.title %>
+    </h1>
+  </div>
+  <p class="text-gray-500"><%= @task.description %></p>
+  <p>
+    <%= link_to "Edit task", edit_task_path(@task), class: "btn btn--primary" %>
+    <%= button_to "Delete task", task_path(@task), method: :delete, class: "btn btn--danger" %>
+  </p>
+</main>

@@ -1,0 +1,10 @@
+<%# app/views/tasks/edit.html.erb %>
+<main class="container">
+  <%= link_to sanitize("&larr; Back to tasks"), tasks_path %>
+  <div class="header">
+    <h1>Edit Task</h1>
+  </div>
+  <%= turbo_frame_tag dom_id(@task, "edit") do %>
+    <%= render "form", task: @task %>
+  <% end %>
+</main>

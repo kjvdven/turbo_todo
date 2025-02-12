@@ -1,11 +1,21 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
+task_1:
   title: "Boodschappen doen"
   description: "Koop melk, eieren en brood"
-  status: "open"
+  status: "in_progress"
 
-two:
+task_2:
   title: "Workout"
   description: "30 minuten cardio en krachttraining"
+  status: "in_progress"
+
+task_3:
+  title: "Boek lezen"
+  description: "Lees 20 pagina's van je huidige boek"
   status: "completed"
+
+task_4:
+  title: "Project starten"
+  description: "Begin met de eerste feature van je Rails-project"
+  status: "in_progress"
