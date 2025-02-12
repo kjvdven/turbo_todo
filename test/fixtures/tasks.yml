@@ -1,6 +1,6 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-task_1:
+task_in_progress:
   title: "Boodschappen doen"
   description: "Koop melk, eieren en brood"
   status: "in_progress"
@@ -10,12 +10,22 @@ task_2:
   description: "30 minuten cardio en krachttraining"
   status: "in_progress"
 
-task_3:
+task_completed:
   title: "Boek lezen"
   description: "Lees 20 pagina's van je huidige boek"
   status: "completed"
 
-task_4:
+task_3:
   title: "Project starten"
   description: "Begin met de eerste feature van je Rails-project"
+  status: "in_progress"
+
+task_long_title:
+  title: <%= "a" * 101 %>
+  description: "30 minuten cardio en krachttraining"
+  status: "in_progress"
+
+task_long_description:
+  title: "Project starten"
+  description: <%= "a" * 501 %>
   status: "in_progress"

@@ -16,6 +16,18 @@ Task.destroy_all
 # Fill the database with data from the fixtures
 system("bin/rails db:fixtures:load FIXTURES=tasks")
 
+# Find invalid tasks
+invalid_tasks = Task.all.reject(&:valid?)
+
+# Remove invalid tasks
+if invalid_tasks.any?
+  puts "\n❌ Removing invalid tasks:"
+  invalid_tasks.each do |task|
+    puts "- #{task.title}: #{task.errors.full_messages.join(', ')}"
+    task.destroy
+  end
+end
+
 puts "✅ Seeding completed! #{Task.count} tasks created."
 
 # Load all fixtures

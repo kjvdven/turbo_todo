@@ -2,7 +2,7 @@ require "test_helper"
 
 class TaskTest < ActiveSupport::TestCase
   test "should be valid with valid attributes" do
-    task = Task.new(title: "Test task", description: "Test description", status: "in_progress")
+    task = tasks(:task_in_progress)
     assert task.valid?
   end
 
@@ -37,15 +37,14 @@ class TaskTest < ActiveSupport::TestCase
   end
 
   test "can be marked as completed" do
-    task = Task.create(title: "Test task")
+    task = tasks(:task_in_progress)
     task.completed!
     assert_equal "completed", task.status
     assert task.completed?
   end
 
   test "can be marked as in progress" do
-    task = Task.create(title: "Test task")
-    task.completed!
+    task = tasks(:task_completed)
     task.in_progress!
     assert_equal "in_progress", task.status
     assert task.in_progress?
